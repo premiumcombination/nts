@@ -1,0 +1,57 @@
+{block head}
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $("li").hover(
+      function () {
+        $(this).addClass('mouseover');
+      },
+      function () {
+        $(this).removeClass('mouseover');
+      }
+    );
+
+    $("li").click(function(){
+        var str = {link edit, _id_};
+        str = str.replace("_id_", this.id);
+    	window.location.href=str;
+    	});
+
+   });
+</script>
+{/block}
+
+{block content}
+<h2>Tournament overview</h2>
+    <div class="center">
+    <div class="notice">(click on the tournament to edit it)</div>
+    <ul class="tournament-list">
+    {foreach $running as $n => $row}
+        <li id="{$row['id']}" n:class="$iterator->isOdd() ? odd : even">
+            <img src="{$baseUri}/images/tour-mini.gif" />
+            #{$row['id']}
+            {$row['type']}
+            {$row['races']}
+            {$row['mode']}vs{$row['mode']}
+            ({$row['slots']} slots)
+            <img src="{$baseUri}/images/tourstate/{$row['state']}" />
+        </li>
+    {/foreach}
+    </ul>
+    <br />
+    <div class="notice">Completed tournaments:</div>
+    <ul class="tournament-list">
+    {foreach $completed as $n => $row}
+        <li id="{$row['id']}" n:class="$iterator->isOdd() ? odd : even">
+            <img src="{$baseUri}/images/tour-mini.gif" />
+            #{$row['id']}
+            {$row['type']}
+            {$row['races']}
+            {$row['mode']}vs{$row['mode']}
+            ({$row['slots']} slots)
+            <img src="{$baseUri}/images/tourstate/{$row['state']}" />
+        </li>
+    {/foreach}
+    </ul>
+    </div>
+{/block}

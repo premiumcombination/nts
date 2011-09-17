@@ -1,0 +1,54 @@
+{**
+ * My Application layout template.
+ *
+ * @copyright  Copyright (c) 2011 Petr Pruner
+ * @package    New Tournament System (NTS)
+ *
+ * @param string   $basePath web base path
+ * @param string   $robots   tell robots how to index the content of a page (optional)
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="description" content="Eurobattle.net PG Tournaments">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>Eurobattle.net Tournaments</title>
+
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css" type="text/css">
+	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css" type="text/css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+	<script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+	{block head}{/block}
+</head>
+
+<body>
+    <div id="headerbar">
+        <div id="panel">
+            <div id="logo">
+                <a href="{link Default:}">eurobattle.net/tournaments</a>
+            </div>
+            <div id="navigation">
+                <ul>
+                    {if $user->isInRole('superadmin') || $user->isInRole('admin')}
+                    <li><a href="{link Admin:}">Admin CP</a></li>{/if}
+                    <li><a href="{link Tournament:}">Tournaments</a></li>
+                    {if !$user->isLoggedIn()}<li><a href="{link Sign:in}">Login</a></li>
+                    {else}<li><a href="{link Sign:out}">Logout</a></li>{/if}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+    <div id="wrap">
+	{include #content}
+    </div>
+    <div id="footer">&copy bulbe 2011</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+nbproject/
+tests/
+res/
+temp/
+log/
+
+*.neon
+.gitignore
+
+www/adminer/
+www/images/

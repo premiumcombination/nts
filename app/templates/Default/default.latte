@@ -1,0 +1,7 @@
+{block content}
+<center><img src="{$baseUri}/../res/showcase/tour.detail.png" /></center><br />
+
+view: {$user->isAllowed('comments', 'view')}<br />
+add: {$user->isAllowed('comments', 'add')}
+{/block}
+

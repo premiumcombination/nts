@@ -1,0 +1,259 @@
+body {
+	font: 15px/1.5 "Trebuchet MS", "Geneva CE", lucida, sans-serif;
+	color: #fff;
+	xbackground-image: url('../images/bg.jpg');
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+	font-size: 200%;
+	color: #3484D2;
+    text-align: center;
+}
+
+h2 {
+    font-size: 140%;
+    text-align: center;
+}
+
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+div.flash {
+	color: black;
+	background: #FFF9D7;
+	border: 1px solid #E2C822;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+a[href^="error:"] {
+	background: red;
+	color: white;
+}
+
+div#wrap {
+    margin: 0 auto;
+    padding: 1em 0.5em;
+    min-width: 500px;
+    width: auto !important;
+    width: 500px;
+    background-color: #312f2f;
+    background-image: url('../images/bg.jpg');
+}
+
+table.tournaments {
+    background-color: #000;
+    padding: 0;
+    border-spacing: 0;
+    margin: 1em auto;
+    border: 1px solid #000;
+}
+
+table.tournaments td {
+    background-color: #382B24;
+    padding: 0.2em;
+    border-top: 1px solid #000;
+    margin: 0;
+}
+
+table.tournaments th {
+    background-color: #111;
+}
+
+div#headerbar {
+    background-color: #222;
+    margin: 0 auto;
+    text-align: left;
+    border-bottom: 1px solid #666;
+    display: block;
+    overflow: auto;
+    /* fixed headerbar ----------
+    xwidth: 100%;
+    xposition: fixed;
+    opacity: 1;
+    left: 0; top: 0;
+    z-index: 23181;
+    */
+}
+
+/* header bar begin --------------------------------------------------------- */
+div#headerbar div#panel {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+div#logo {
+    position: relative;
+    float: left;
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+div#navigation {
+    position: relative;
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+div#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+div#navigation li {
+    float: left;
+    padding: 0 0.5em;
+}
+
+div#panel a, div#panel a:link, div#panel a:visited {
+    height: 2em;
+    line-height: 2em;
+    float: left;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 0 0.5em;
+    font-weight: bold;
+}
+div#panel a:hover, div#panel a:active, div#panel a:focus {
+    background-color: #333;
+    color: #fff;
+}
+
+/* header bar end------------------------------------------------------------ */
+
+div#footer {
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+/* table brackets begin ----------------------------------------------------- */
+table.brackets {
+    border: 1px solid #666;
+    border-spacing: 0;
+    margin: 0 auto;
+}
+table.brackets th {
+    border-bottom: 1px solid #666;
+    background-color: #111;
+}
+table.brackets td {
+    vertical-align: middle;
+    height: 37px;
+    margin: 0;
+    padding: 0;
+    height: 37px;
+    background-color: #111;
+}
+table.brackets td.odd {
+    background-color: #222;
+}
+table.brackets div.brackets-plr {
+    height: 37px;
+    background: transparent url('../images/brackets/brackets.bg.gif') repeat-x left top;
+    float: left;
+    width: 124px;
+    overflow: hidden;
+    font-family: Verdana;
+    font-size: 12px;
+}
+table.brackets p {
+    padding: 10px 1px;
+    margin: 0;
+}
+table.brackets img.brackets-left {
+    float: left;
+}
+table.brackets img.brackets-right {
+    float: left;
+}
+table.brackets div.brackets-fixed {
+    width: 180px;
+}
+table.brackets td.brackets-con-top {
+    background-image: url('../images/brackets/con/top.gif');
+    height: 37px;
+    width: 10px;
+}
+table.brackets td.brackets-con-mid {
+    background-image: url('../images/brackets/con/mid.gif');
+    height: 37px;
+    width: 10px;
+}
+table.brackets td.brackets-con-bot {
+    background-image: url('../images/brackets/con/bot.gif');
+    height: 37px;
+    width: 10px;
+}
+table.brackets td.brackets-con-vert {
+    background-image: url('../images/brackets/con/vert.gif');
+    height: 37px;
+    width: 10px;
+}
+
+/* header bar end ----------------------------------------------------------- */
+/* tournament list begin ---------------------------------------------------- */
+ul.tournament-list {
+    margin: 0.4em auto;
+    list-style: none;
+    border: 1px solid #666;
+    padding: 0;
+}
+ul.tournament-list li {
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0.4em;
+}
+ul.tournament-list li.odd {
+    background-color: #111;
+}
+ul.tournament-list li.even {
+    background-color: #271a13;
+}
+ul.tournament-list li.mouseover {
+    background-color: #333;
+    cursor: pointer;
+}
+/* tournament list end ------------------------------------------------------ */
+
+div.center {
+    margin: 0 auto;
+    padding: 1em 0.5em;
+    width: 500px;
+}
+
+div.clear {
+    clear: both;
+}
+
+input {
+    font-size: 12px;
+    font-family: Verdana;
+    border: 1px solid #666;
+    padding: 0.5em;
+}
+
+div.notice {
+    margin: 0 auto;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+}

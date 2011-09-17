@@ -1,0 +1,51 @@
+{block content}
+<div class="center">
+{control postForm}
+</div>
+{if $presenter['postForm']->isSubmitted()}
+<h2>New bracket generator for {$slots} players</h2>
+<table class="brackets">
+    {* beginning of rendering table headers --------------------------------- *}
+    <tr>
+    {for $col=0; $col<$width; $col++}
+        <th>
+        {if $col%2==1} &nbsp;
+        {elseif $col==$width-1} WINNER
+        {elseif $col==$width-3} FINALS
+        {elseif $col==$width-5} SEMIFINALS
+        {else} ROUND {$col/2+1}
+        {/if}
+        </th>
+    {/for}
+    </tr>
+    {* end of rendering table headers --------------------------------------- *}
+    {* beginning of rendering the brackets ---------------------------------- *}
+    {for $row=0; $row<$height; $row++}
+        {for $col=0; $col<$width; $col++}
+            {? $odd = (($col/2+1)%2==0 && $col%2==0) ? 1 : 0;}
+            {if !isset($brackets[$row][$col])}
+                <td n:class="$odd ? odd">&nbsp;</td>
+            {elseif $brackets[$row][$col] == 'plr' || $brackets[$row][$col] == 'fplr'}
+                <td n:class="$odd ? odd">
+                    <div class="brackets-fixed">
+                        <img class="brackets-left" src="{$baseUri}/images/brackets/brackets.left.gif" />
+                        <div class="brackets-plr"><p>{*$random[rand(0,20)]*}c:{$col},r:{$row}</p></div>
+                        {if $brackets[$row][$col] == 'fplr'}
+                        <img class="brackets-right" src="{$baseUri}/images/brackets/brackets.right.1st.gif" />
+                        {else}
+                        <img class="brackets-right" src="{$baseUri}/images/brackets/brackets.right.gif" />
+                        {/if}
+                    </div>
+                </td>
+            {else}
+                <td class="brackets-{$brackets[$row][$col]}" n:class="$odd ? odd">&nbsp;</td>
+            {/if}
+        {/for}
+        </tr>
+    {/for}
+    {* end of rendering the brackets ---------------------------------------- *}
+</table>
+{/if}
+{/block}
+
+{if isset($values)}{dump $values}{/if}
