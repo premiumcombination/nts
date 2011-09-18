@@ -1,8 +1,7 @@
 <?php
 /**
  * Description of TournamentModel
- *
- * @author Petr Pruner
+ * @author bulb 2011
  */
 class TournamentModel {
     
