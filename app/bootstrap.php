@@ -1,7 +1,8 @@
 <?php
 
 /**
- * My Application bootstrap file.
+ * @author bulb 2011
+ * @package New Tournament System (NTS)
  */
 
 use Nette\Diagnostics\Debugger,

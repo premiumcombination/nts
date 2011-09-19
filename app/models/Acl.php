@@ -1,17 +1,22 @@
 <?php
 
+/**
+ * @author bulb 2011
+ * @package New Tournament System (NTS)
+ * 
+ * @name Access Control List (ACL) implementation
+ */
+
 class Acl extends Nette\Security\Permission {
 
     public function __construct() {
 
-        /* Roles
-         * ----- */
+        // ROLES
         $this->addRole('guest');
         $this->addRole('admin', 'guest');
         $this->addRole('superadmin', 'admin');
 
-        /* Resources
-         * --------- */
+        // RESOURCES
         $this->addResource('Default');
         $this->addResource('Tournament');
         $this->addResource('Sign');
@@ -19,8 +24,7 @@ class Acl extends Nette\Security\Permission {
         $this->addResource('admincp');
         $this->addResource('comments');
 
-        /* Privileges
-         * ---------- */
+        // PRIVILEGES
         // guest:
         $this->allow('guest', 'Default', 'default');
         $this->allow('guest', 'Tournament', 'default'); // view tournament brackets

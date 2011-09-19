@@ -1,10 +1,21 @@
 <?php
-/*
+/**
+ * @author bulb 2011
+ * @package New Tournament System (NTS)
+ * 
+ * @name Brackets
  * recursion function for bracket filling
  * filling the array in the *right to left* direction (from finals to round1)
  */
 
 class Brackets {
+    
+    /**
+     * generate single elimination tournament brackets
+     * @param type $arr - address of $arr (array put in the parameter is changed)
+     * @param type $row - current row
+     * @param type $col - current column
+     */
     static function single(&$arr, $row, $col) {
         $offset = 1<<($col/2-1);
         if($col<0) {
@@ -27,8 +38,13 @@ class Brackets {
         Brackets::single($arr, $row+$offset, $col-2);
     }
 
-    static function duble(&$arry, $row, $col) {
+    /**
+     * generate double elimination tournament brackets
+     * @param type $arr - address of $arr (array put in the parameter is changed)
+     * @param type $row - current row
+     * @param type $col - current column
+     */
+    static function double(&$arry, $row, $col) {
         
     }
 }
-

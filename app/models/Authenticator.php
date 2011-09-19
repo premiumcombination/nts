@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * @author bulb 2011
+ * @package New Tournament System (NTS)
+ * 
+ * @name Authentication class
+ * - reimplementation of Nette\Security\IAuthenticator
+ * - user's credentials have to match a database record
+ * - passwords are salted and hashed using sha1 for better security
+ */
+
 use Nette\Security as NS;
 
 class Authenticator extends Nette\Object implements NS\IAuthenticator {

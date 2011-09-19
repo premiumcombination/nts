@@ -1,11 +1,11 @@
 <?php
 /**
- * Description of TournamentModel
  * @author bulb 2011
+ * @package New Tournament System (NTS)
+ * 
+ * @name TournamentModel class
  */
 class TournamentModel {
-    
-    private $pagination = 20;
     
     public function getTours() {
         

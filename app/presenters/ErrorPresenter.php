@@ -1,16 +1,15 @@
 <?php
 
+/**
+ * @author bulb 2011
+ * @package New Tournament System (NTS) 
+ * 
+ * @name ErrorPresenter, handles server errors
+ */
+
 use Nette\Diagnostics\Debugger,
 	Nette\Application as NA;
 
-
-
-/**
- * Error presenter.
- *
- * @author     John Doe
- * @package    MyApplication
- */
 class ErrorPresenter extends BasePresenter
 {
 

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @author bulb 2011
+ * @package New Tournament System (NTS)
+ * 
+ * @name SignPresenter
+ */
+
 use Nette\Application\UI,
  Nette\Security as NS;
 

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @author bulb 2011
+ * @package New Tournament System (NTS)
+ */
+
 // uncomment this line if you must temporarily take down your site for maintenance
 // require '.maintenance.php';
 

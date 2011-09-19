@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @author bulb 2011
+ * @package New Tournament System (NTS)
+ * 
+ * @name TournamentPresenter
+ */
+
 use Nette\Application\UI\Form;
 
 class TournamentPresenter extends BasePresenter {
@@ -92,6 +99,10 @@ class TournamentPresenter extends BasePresenter {
         $this->template->brackets = $arr;
     }
 
+    /**
+     * Add form component factory.
+     * @return Nette\Application\UI\Form
+     */
     protected function createComponentAddForm() {
 
         $form = new Form;
@@ -122,6 +133,12 @@ class TournamentPresenter extends BasePresenter {
         $this->redirect('Admin:');
     }
 
+    /**
+     * list of running/scheduled/completed tournaments for administrators
+     * can edit the current tournament by clicking on it (jQuery)
+     * 
+     * to-do: database queries should be called using TournamentModel class
+     */
     public function renderOverview() {
         
         $tour = new TournamentModel;
