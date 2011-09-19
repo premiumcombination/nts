@@ -7,7 +7,7 @@
  * @name Authentication class
  * - reimplementation of Nette\Security\IAuthenticator
  * - user's credentials have to match a database record
- * - passwords are salted and hashed using sha1 for better security
+ * @todo passwords are salted and hashed using sha1 for better security (after registration is done)
  */
 
 use Nette\Security as NS;
