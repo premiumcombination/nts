@@ -1,50 +1,42 @@
-Nette Framework Sandbox
-=======================
-
-The basic structure for your application.
+New Tournament System (NTS)
+===========================
 
 
-What is Nette Framework?
-------------------------
-
-Nette Framework is a powerful, component-based and event-driven framework
-for creating web applications and services in PHP 5.2 & 5.3. Nette Framework
-is designed with simplicity, speed and flexibility in mind. It allows developers
-to easy built better websites.
-
-Nette Framework focuses on security and performance and is definitely one of
-the safest and fastest PHP frameworks. Nette Framework support the latest
-technologies and approaches like AJAX, HTML5, SEO, DRY, KISS, MVC, etc.
+NTS is my first project where I use Nette2 beta. I decided to return back to Nette Framework after one year of experiencing OOP in C++. Though I still have to ask the community to respond my dummy questions, I keep trying not to give up because I like the framework concept and its ideas.
 
 
-Requirements
+In the future I would like to implement following:
+  #visitors
+    - can view running/scheduled/completed tournaments
+    - can comment a match
+    - can download replays
+    - can view match reports
+    - can register a new player account
+
+  #players
+    - can register to any scheduled tournament
+    - can unregister from any scheduled tournament
+    - can upload their replays
+    - can contact their opponent via PM (notification system)
+    - can add a friend into a team (=> 2v2, 3v3 etc tournaments)
+    
+  #tournament operators
+    - can add/edit/delete tournaments
+      - number of slots (players) is scalable (any power of 2)
+      - support of both single and double elimination systems
+    - can edit match results
+    - can add maps into map pool
+    - can add bad points (player doesn't show up for a match etc.)
+    
+  #site administrator
+    - can un/ban users
+    - can demote/promote users (e.g. a player to an operator)
+    - can update the global stats database
+
+
+Created with
 ------------
-
-Nette Framework requires PHP 5.2.0 and/or 5.3.0.
-
-
-Installing
-----------
-
-Make directories 'sandbox/temp' and 'sandbox/log' writable.
-
-It is CRITICAL that file 'sandbox/app/config.neon' & whole 'sandbox/app', 'sandbox/log'
-and 'sandbox/temp' directory are NOT accessible directly via a web browser! If you
-don't protect this directory from direct web access, anybody will be able to see
-your sensitive data. See: http://nette.org/security-warning
+Nette2.0-beta
+dibi 1.5rc
 
 
-Documentation, Examples, Sandbox, Tools
----------------------------------------
-
-Nette Framework: homepage http://nette.org and repository http://github.com/nette/nette
-Sandbox, pre-packaged and configured project: http://github.com/nette/sandbox
-Examples repository: http://github.com/nette/examples
-
-
-License
--------
-
-This skeleton is part of the Nette Framework (http://nette.org). For the full
-copyright and license information, please view the file license.txt.
-For "Adminer" copyright and license information, please view it's source code.
