@@ -22,7 +22,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter {
         $user = $this->user;
 
         // user logged out due his inactivity?
-        if (!$user->loggedIn && $user->logoutReason === User::INACTIVITY && $this->action !== 'logout') {
+        if (!$user->isLoggedIn() && $user->logoutReason === User::INACTIVITY && $this->action !== 'logout') {
             $user->logout(TRUE); // clear the identity
             $this->flashMessage('You were automatically logged out due to your inactivity.');
             $this->redirect('Default:');
